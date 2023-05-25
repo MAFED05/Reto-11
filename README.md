@@ -133,6 +133,7 @@ Desarrollar un programa que sume los elementos de una columna dada de una matriz
 ### Código
 
 ``` python
+
 ```
 
 ## Punto 5
@@ -142,4 +143,55 @@ Desarrollar un programa que sume los elementos de una fila dada de una matriz.
 ### Código
 
 ``` python
+def ingresar_matriz(filas, columnas): 
+     """
+    permite crear una matriz
+
+    Argumentos:
+       filas: los digitos horizontales
+       columnas: los digitos verticales
+
+    Return:
+        matriz
+    """
+     matriz = [] # se crea una lista vacia donde se almacenara la matriz
+     for i in range(filas): #se crea un ciclo for para elemento i en el rango de filas
+        fila = [] # se crea una lista con las filas
+        for j in range(columnas): #se crea un ciclo for para el elemento j en el rango de columnas 
+            elemento = int(input(f"Ingrese el elemento [{i}][{j}]: ")) # se solicita ingresar los elementos en este formato
+            fila.append(elemento) #se agrega el elemento en filas
+        matriz.append(fila)# se agrega a la matriz
+     return matriz
+def sumarFila(matriz, fila):
+    """
+    Suma los elementos de una fila dada de una matriz.
+
+    Argumentos:
+        matriz (list): La matriz.
+        fila (int): El índice de la fila a sumar.
+
+    Returns:
+        int: La suma de los elementos de la fila.
+    """
+    suma = 0 #inicializamos la variable en 0
+    if fila < len(matriz):# creamos un condicional que diga que si fila es menor que la cantidad de elementos de la matriz
+        for elemento in matriz[fila]:# para cada elemento de la fila
+            suma += elemento # sumar los elementos que hayan
+    return suma
+
+if __name__ == "__main__":
+ filas = int(input("Ingrese el número de filas de la matriz: "))
+ columnas = int(input("Ingrese el número de columnas de la matriz: "))
+
+ matriz = ingresar_matriz(filas, columnas)
+ for fila in matriz:
+  print (fila)
+ # Solicitar al usuario la fila a sumar
+ fila = int(input("Ingrese el número de fila que desea sumar: "))
+
+ # Sumar los elementos de la columna
+ sumaFila = sumarFila(matriz, fila)
+
+# Mostrar el resultado
+ print(f"La suma de la columna {fila} es: {sumaFila}")
 ```
