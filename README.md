@@ -177,7 +177,51 @@ Desarrollar un programa que sume los elementos de una columna dada de una matriz
 ### Código
 
 ``` python
+def crearMatriz(filas,columnas): 
+    """
+    permite crear una matriz
 
+    Argumentos:
+       filas: los digitos horizontales
+       columnas: los digitos verticales
+
+    Return:
+        matriz
+    """
+    matriz=[]
+    for i in range (0,filas): 
+        fila= [] 
+        for j in range(0, columnas): 
+            valor=float(input()) 
+            fila. append(valor) 
+        matriz.append(fila) 
+    return(matriz)
+
+def sumaColumna (filas,matrizA,p):
+    Columna = [] # Dejo una variable llamada columna como una lista vacia
+    Sumas= 0 # Agrego otra variable definida como 0 
+    for x in range(0,filas): # Este range sirve para recorrer el numero de filas ingresadas por el usuario
+        Columna.append(matrizA[x][p-1]) # Despues de recorrer las filas voy a adicionar a la lista vacia (columna) x 
+                                        # Este proceso obtendra la columna que quiere el lector ningun dato diferente a esa columna se adicionara a la lista vacia  
+    for w in range(0,len(Columna)): # Ahora recorro la lista (Columna) la cual tiene los datos de la columna en una fila 
+        Suma = Sumas + Columna[w] # Se realiza la respectiva operación
+    return(Suma) # Se retorna el resultado de la operación
+
+
+if __name__ == "__main__":
+        
+    print("MATRIZ")
+    filas = int(input("Especifique el numero de filas de la primera matriz: ")) # Solicitamos la cantidad de filas
+    columnas = int(input("Especifique el numero de columnas de la primera matriz: ")) # Solicitamos la cantidad de columnas
+    matrizA = crearMatriz(filas,columnas) # Realizo la matriz en la cual llamo a la funcion crear matriz
+    for i in range (0,filas): #Se coloca para que se pueda imprimir en forma de matriz
+        print(matrizA[i]) # Imprimo la matriz
+    
+    k = int(input("Cual es la columna de la que quiere obtener la sumatoria: ")) #  Solicimos la fila de la que quiere obtenenr la sumatoria
+
+    print ("La sumatoria de la columna", str(k), "es:") 
+    suma2 = sumaColumna (filas,matrizA,k) # Llamo a la funcion suma columna 
+    print(suma2) #Se imprime el resultado final
 ```
 
 ## Punto 5
