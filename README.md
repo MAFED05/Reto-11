@@ -124,6 +124,50 @@ Desarrolle un programa que permita obtener la matriz transpuesta de una matriz i
 ### Código
 
 ``` python
+def crearMatriz(filas,columnas):
+     """
+    permite crear una matriz
+
+    Argumentos:
+       filas: los digitos horizontales
+       columnas: los digitos verticales
+
+    Return:
+        matriz
+    """
+     matriz=[] 
+     for i in range (0,filas): 
+         fila= [] 
+         for j in range(0, columnas): 
+            valor=float(input())
+            fila. append(valor) 
+         matriz.append(fila) 
+     return(matriz)
+
+def Matriz_Transpuesta (filas,columnas,matrizA):
+    transpuesta = [] # Adiciono variable de nombre transpuesta como una lista vacia
+    for x in range(0,columnas): # Recorro la cantidad de columnas que haya puesto el usuario. Es muy importante que este range recorra columnas, si recorre filas el programa no funcionara
+        lista = [] # Agrego una lista vacia
+        for m in range (0,filas): # Ahora recorro el numero de filas
+            lista.append(matrizA[m][x]) #Aqui las columnas se convierten en filas.
+                                        
+        transpuesta.append(lista) # Adicionamos los valores de la lista ahora a la variable vacia de nombre transpuesta con ayuda del append
+    return(transpuesta)  # Retornamos la transpuesta 
+
+
+if __name__ == "__main__":
+
+    print("MATRIZ")
+    filas = int(input("Especifique el numero de filas de la primera matriz: ")) # Se solicita la cantidad de filas
+    columnas = int(input("Especifique el numero de columnas de la primera matriz: ")) # Se solicita la cantidad de columnas
+    matriz1 = crearMatriz(filas,columnas) # Realizo la matriz en la cual llamo a la funcion crear matriz
+    for i in range (0,filas): # Recorro desde 0 hasta la cantidad de filas que ingreso el usuario
+        print(matriz1[i]) # Imprimo la matriz
+
+    matrizP = Matriz_Transpuesta(filas,columnas,matriz1) # 
+    print("La transpuesta de la matriz es: ")
+    for i in range (0,columnas): #Paso para que la matriz se imprima en forma de forma correcta y no todas seguidas como en una linea recta
+        print(matrizP[i])
 ```
 
 ## Punto 4
